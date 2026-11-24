@@ -4,7 +4,7 @@ This repository is a small Next.js application that turns text into speech throu
 
 ## Preview
 
-- Demo video: `TODO` — add your YouTube URL here (for example: `[Watch the demo](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)`).
+- Demo video: [Watch the demo](https://youtu.be/kB17lFsJ6xg)
 - Live demo: [https://elevenlabdevex.vercel.app/](https://elevenlabdevex.vercel.app/)
 
 ## What you'll learn
