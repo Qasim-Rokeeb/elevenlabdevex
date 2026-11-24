@@ -1,0 +1,308 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 var(--space-4) var(--space-4);
+}
+
+.shell {
+  width: 100%;
+  max-width: 720px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topBar {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast) var(--ease);
+  flex-shrink: 0;
+}
+
+.topBarScrolled {
+  border-bottom-color: var(--border);
+}
+
+.logo {
+  font-size: var(--fs-title);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.topActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.iconButton {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease);
+}
+
+.iconButton:hover {
+  color: var(--text-primary);
+  background: var(--accent-soft);
+}
+
+.iconButton svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-5) 0;
+  gap: var(--space-4);
+}
+
+.inputWrap {
+  width: 100%;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 220px;
+  resize: vertical;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-input);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  transition: border-color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+}
+
+.textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.error {
+  margin-top: var(--space-2);
+  font-size: 14px;
+  color: var(--danger);
+  animation: shake 200ms var(--ease);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+
+.controlsRow {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-4);
+}
+
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.controlLabel {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.select {
+  appearance: none;
+  padding: 10px 36px 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-button);
+  background-color: var(--surface);
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.2;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B6B66' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  min-width: 160px;
+}
+
+.select:focus {
+  outline: none;
+}
+
+.segmented {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-button);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.segment {
+  padding: 10px 14px;
+  border: none;
+  border-right: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease);
+  min-width: 56px;
+}
+
+.segment:last-child {
+  border-right: none;
+}
+
+.segment:hover {
+  color: var(--text-primary);
+}
+
+.segmentActive {
+  color: var(--text-primary);
+  background: rgba(30, 30, 30, 0.06);
+}
+
+[data-theme="dark"] .segmentActive {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.speakRow {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--space-2);
+}
+
+.speakButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 140px;
+  padding: 14px 32px;
+  border: none;
+  border-radius: var(--radius-button);
+  background: var(--accent);
+  color: #FFFFFF;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(59, 91, 255, 0.25);
+  transition: filter var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease), box-shadow var(--dur-med) var(--ease), opacity var(--dur-fast) var(--ease);
+}
+
+.speakButton:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.speakButton:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.speakButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.speaking {
+  box-shadow: 0 0 20px rgba(59, 91, 255, 0.5);
+  animation: pulse 1.6s var(--ease) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.wave {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  height: 18px;
+}
+
+.bar {
+  width: 4px;
+  height: 6px;
+  border-radius: 2px;
+  background: #FFFFFF;
+  animation: wave 0.9s var(--ease) infinite alternate;
+}
+
+.bar:nth-child(1) { animation-delay: 0ms; }
+.bar:nth-child(2) { animation-delay: 140ms; }
+.bar:nth-child(3) { animation-delay: 280ms; }
+.bar:nth-child(4) { animation-delay: 420ms; }
+.bar:nth-child(5) { animation-delay: 560ms; }
+
+@keyframes wave {
+  from { height: 6px; }
+  to { height: 18px; }
+}
+
+.footer {
+  padding: var(--space-3) 0;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 0 var(--space-3) var(--space-3);
+  }
+
+  .main {
+    justify-content: flex-start;
+    padding: var(--space-4) 0;
+  }
+
+  .textarea {
+    min-height: 160px;
+  }
+
+  .controlsRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .select,
+  .segmented {
+    width: 100%;
+  }
+
+  .segment {
+    flex: 1;
+  }
+
+  .speakButton {
+    width: 100%;
+  }
+}
